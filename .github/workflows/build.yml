@@ -39,7 +39,7 @@ jobs:
       run: dotnet build -c Release OpenFigmaToMTA/OpenFigmaToMTA.sln
 
     - name: Test
-      run: dotnet test -c Release OpenFigmaToMTA/OpenFigmaToMTA/OpenFigmaToMTA.cspro /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput='./lcov.info' /p:Include="[ValveKeyValue*]*"
+      run: dotnet test -c Release OpenFigmaToMTA/OpenFigmaToMTA/OpenFigmaToMTA.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput='./lcov.info' /p:Include="[ValveKeyValue*]*"
 
     - name: Create nupkg
       run: dotnet pack --configuration Release OpenFigmaToMTA/OpenFigmaToMTA.csproj
