@@ -24,6 +24,9 @@ jobs:
       with:
         dotnet-version: 6.0.x
 
+    - name: Check Dir
+      run: dir
+
     - name: Build
       run: dotnet build -c Release OpenFigmaToMTA.sln
 
@@ -32,9 +35,6 @@ jobs:
 
     - name: Create nupkg
       run: dotnet pack --configuration Release OpenFigmaToMTA/OpenFigmaToMTA.csproj
-
-    - name: Check Dir
-      run: dir
 
     - name: Create Releases
       id: create_release
