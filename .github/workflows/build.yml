@@ -27,9 +27,7 @@ jobs:
       run: dotnet pack --configuration Release OpenFigmaToMTA/OpenFigmaToMTA.csproj
 
     - name: Check Dir
-      run: |
-      7z a -mmt2 -mx9 OpenFigmaToMTA.zip .
-      dir
+      run: dir
 
     upload:
      - name: Create Releases
