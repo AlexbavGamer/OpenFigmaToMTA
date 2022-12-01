@@ -58,7 +58,10 @@ jobs:
 
     - name: OpenFigmaToMTA.zip
       run: cd D:\a\OpenFigmaToMTA\OpenFigmaToMTA\OpenFigmaToMTA\OpenFigmaToMTA\git | 7z a -mmt2 -mx9 OpenFigmaToMTA-v${{ github.event.inputs.versionLevel }}.zip .
-          
+    
+    - name: Check Dir 2
+      run: dir -s
+
     - name: Upload Release Asset
       id: upload-release-asset 
       uses: actions/upload-release-asset@v1
