@@ -54,7 +54,7 @@ jobs:
        prerelease: false
 
     - name: Check Dir
-      run: cd OpenFigmaToMTA\OpenFigmaToMTA\ && dir
+      run: dir -s
           
     - name: Upload Release Asset
       id: upload-release-asset 
