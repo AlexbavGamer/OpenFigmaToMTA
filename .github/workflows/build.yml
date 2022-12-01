@@ -4,6 +4,14 @@ name: Build
 
 on:
  workflow_dispatch:
+    inputs:
+      versionLevel:
+        description: 'Version Number'
+        required: true
+      changeLog:
+        description: 'Changelog'
+        required: true
+        default: 'Update'
 
 jobs:
   build:
