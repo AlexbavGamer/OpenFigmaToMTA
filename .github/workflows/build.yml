@@ -54,8 +54,8 @@ jobs:
        prerelease: false
 
     - name: Check Dir
-      run: cd OpenFigmaToMTA/OpenFigmaToMTA/
-      
+      run: cd OpenFigmaToMTA\OpenFigmaToMTA\
+
     - name: Dir
       run: dir
           
