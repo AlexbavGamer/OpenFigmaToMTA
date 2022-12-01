@@ -53,14 +53,8 @@ jobs:
        draft: false
        prerelease: false
 
-    - name: Check Dir
-      run: dir -s
-
     - name: OpenFigmaToMTA.zip
-      run: cd D:\a\OpenFigmaToMTA\OpenFigmaToMTA\OpenFigmaToMTA\OpenFigmaToMTA\git | 7z a -mmt2 -mx9 OpenFigmaToMTA-v${{ github.event.inputs.versionLevel }}.zip .
-    
-    - name: Check Dir 2
-      run: dir -s
+      run: ./build.sh
 
     - name: Upload Release Asset
       id: upload-release-asset 
@@ -69,6 +63,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./OpenFigmaToMTA/OpenFigmaToMTA/OpenFigmaToMTA/git/OpenFigmaToMTA-v${{ github.event.inputs.versionLevel }}.zip
-          asset_name: OpenFigmaToMTA-v${{ github.event.inputs.versionLevel }}.zip
+          asset_path: ./OpenFigmaToMTA/OpenFigmaToMTA/OpenFigmaToMTA/git/OpenFigmaToMTA.zip
+          asset_name: OpenFigmaToMTA.zip
           asset_content_type: application/zip
