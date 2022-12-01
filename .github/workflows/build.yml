@@ -32,9 +32,6 @@ jobs:
     - name: Clone Repo
       run: git clone https://github.com/AlexbavGamer/OpenFigmaToMTA.git
 
-    - name: Check Dir
-      run: dir
-
     - name: Build
       run: dotnet build -c Release OpenFigmaToMTA/OpenFigmaToMTA.sln
 
@@ -55,6 +52,9 @@ jobs:
             - ${{ github.event.inputs.changeLog }}
        draft: false
        prerelease: false
+
+    - name: Check Dir
+      run: dir
           
     - name: Upload Release Asset
       id: upload-release-asset 
