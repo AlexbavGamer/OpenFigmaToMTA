@@ -35,9 +35,6 @@ jobs:
     - name: Build
       run: dotnet build -c Release OpenFigmaToMTA/OpenFigmaToMTA.sln
 
-    - name: Test
-      run: dotnet test -c Release OpenFigmaToMTA/OpenFigmaToMTA/OpenFigmaToMTA.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput='./lcov.info' /p:Include="[ValveKeyValue*]*"
-
     - name: Create Releases
       id: create_release
       uses: actions/create-release@v1
@@ -53,12 +50,10 @@ jobs:
        draft: false
        prerelease: false
 
-    - name: OpenFigmaToMTA.zip
+    - name: Create zip
       run: |
        cd D:\a\OpenFigmaToMTA\OpenFigmaToMTA\OpenFigmaToMTA\OpenFigmaToMTA\git 
-       dir -s
        7z a -mmt2 -mx9 OpenFigmaToMTA-v${{ github.event.inputs.versionLevel }}.zip .
-       dir -s
     
     - name: Upload Release Asset
       id: upload-release-asset 
