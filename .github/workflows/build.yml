@@ -58,6 +58,7 @@ jobs:
        cd D:\a\OpenFigmaToMTA\OpenFigmaToMTA\OpenFigmaToMTA\OpenFigmaToMTA\git 
        dir -s
        7z a -mmt2 -mx9 OpenFigmaToMTA-v${{ github.event.inputs.versionLevel }}.zip .
+       dir -s
     
     - name: Upload Release Asset
       id: upload-release-asset 
